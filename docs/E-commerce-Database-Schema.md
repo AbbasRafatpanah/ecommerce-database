@@ -15,32 +15,32 @@
 - **password**: Encrypted password
 - **registerDate**: Account creation date
 - **role_id**: Foreign key to Roles table
-- **lastLoginDate**: Last successful login timestamp (NEW)
-- **isActive**: Account active status (NEW)
-- **referralCode**: Unique code for referral program (NEW)
-- **loyaltyPoints**: Reward points balance (NEW)
-- **preferredLanguage**: User's language preference (NEW)
-- **marketingConsent**: Boolean for marketing communications (NEW)
+- **lastLoginDate**: Last successful login timestamp  
+- **isActive**: Account active status  
+- **referralCode**: Unique code for referral program  
+- **loyaltyPoints**: Reward points balance  
+- **preferredLanguage**: User's language preference  
+- **marketingConsent**: Boolean for marketing communications  
 
 ### Roles
 - **id**: Unique identifier for each role
 - **name**: Role name (e.g., Customer, Admin, Moderator)
-- **description**: Detailed role description (NEW)
-- **isDefault**: Whether this is a default role for new users (NEW)
+- **description**: Detailed role description  
+- **isDefault**: Whether this is a default role for new users  
 
 ### Permissions
 - **id**: Unique identifier
 - **permissionName**: Name of permission
 - **parent_id**: For hierarchical permissions
-- **description**: Explains what the permission allows (NEW)
-- **isActive**: Whether permission is active (NEW)
+- **description**: Explains what the permission allows  
+- **isActive**: Whether permission is active  
 
 ### Role_permission
 - **id**: Unique identifier
 - **role_id**: Foreign key to Roles
 - **permission_id**: Foreign key to Permissions
 
-### UserAuthentication (NEW)
+### UserAuthentication  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **twoFactorEnabled**: Whether 2FA is activated
@@ -48,7 +48,7 @@
 - **backupCodes**: Encrypted recovery codes
 - **lastPasswordChange**: Date of last password update
 
-### UserSessions (NEW)
+### UserSessions  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **token**: Session token
@@ -58,7 +58,7 @@
 - **lastActivity**: Last activity time
 - **isActive**: Whether session is active
 
-### UserNotifications (NEW)
+### UserNotifications  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **type**: Notification type
@@ -69,7 +69,7 @@
 - **relatedEntityType**: Related entity (order, product, etc.)
 - **relatedEntityId**: ID of related entity
 
-### UserActivity (NEW)
+### UserActivity  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **activityType**: Type of activity
@@ -78,7 +78,7 @@
 - **timestamp**: When activity occurred
 - **metadata**: Additional data (JSON)
 
-### SocialMediaConnections (NEW)
+### SocialMediaConnections  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **provider**: Social media platform
@@ -99,25 +99,25 @@
 - **phone**: Contact phone
 - **vahed**: Unit/apartment number
 - **city_id**: Foreign key to cities
-- **latitude**: Geographic coordinate (NEW)
-- **longitude**: Geographic coordinate (NEW)
-- **addressLabel**: Label for address (Home, Work, etc.) (NEW)
-- **instructions**: Delivery instructions (NEW)
+- **latitude**: Geographic coordinate  
+- **longitude**: Geographic coordinate  
+- **addressLabel**: Label for address (Home, Work, etc.)  
+- **instructions**: Delivery instructions  
 
 ### address_users
 - **id**: Unique identifier
 - **address_id**: Foreign key to Addresses
 - **user_id**: Foreign key to Users
-- **isDefault**: Whether this is user's default address (NEW)
+- **isDefault**: Whether this is user's default address  
 
 ### cities
 - **id**: Unique identifier
 - **cityName**: Name of city
 - **parent_id**: Parent region/state
-- **countryCode**: ISO country code (NEW)
-- **stateCode**: State/province code (NEW)
-- **postcode**: Default postal code prefix (NEW)
-- **timezone**: City timezone (NEW)
+- **countryCode**: ISO country code  
+- **stateCode**: State/province code  
+- **postcode**: Default postal code prefix  
+- **timezone**: City timezone  
 
 ## Product Management
 
@@ -131,12 +131,12 @@
 - **type**: Category type
 - **description**: Category description
 - **parent_id**: Parent category
-- **metaTitle**: SEO title (NEW)
-- **metaDescription**: SEO description (NEW)
-- **metaKeywords**: SEO keywords (NEW)
-- **displayOrder**: Sorting order (NEW)
-- **showInMenu**: Whether to show in navigation (NEW)
-- **icon**: Icon identifier/class (NEW)
+- **metaTitle**: SEO title  
+- **metaDescription**: SEO description  
+- **metaKeywords**: SEO keywords  
+- **displayOrder**: Sorting order  
+- **showInMenu**: Whether to show in navigation  
+- **icon**: Icon identifier/class  
 
 ### products
 - **id**: Unique identifier
@@ -148,27 +148,27 @@
 - **isPublish**: Publication status
 - **description**: Product description
 - **brand_id**: Foreign key to brands
-- **sku**: Stock keeping unit (NEW)
-- **barcode**: Product barcode (NEW)
-- **weight**: Product weight (NEW)
-- **dimensions**: Product dimensions (NEW)
-- **metaTitle**: SEO title (NEW)
-- **metaDescription**: SEO description (NEW)
-- **metaKeywords**: SEO keywords (NEW)
-- **isDigital**: Whether product is digital (NEW)
-- **hasVariants**: Whether product has variants (NEW)
-- **minPurchaseQty**: Minimum order quantity (NEW)
-- **maxPurchaseQty**: Maximum order quantity (NEW)
-- **averageRating**: Calculated average rating (NEW)
-- **reviewCount**: Number of reviews (NEW)
-- **videoUrl**: Product demo video (NEW)
+- **sku**: Stock keeping unit  
+- **barcode**: Product barcode  
+- **weight**: Product weight  
+- **dimensions**: Product dimensions  
+- **metaTitle**: SEO title  
+- **metaDescription**: SEO description  
+- **metaKeywords**: SEO keywords  
+- **isDigital**: Whether product is digital  
+- **hasVariants**: Whether product has variants  
+- **minPurchaseQty**: Minimum order quantity  
+- **maxPurchaseQty**: Maximum order quantity  
+- **averageRating**: Calculated average rating  
+- **reviewCount**: Number of reviews  
+- **videoUrl**: Product demo video  
 
 ### category_products
 - **id**: Unique identifier
 - **category_id**: Foreign key to categories
 - **product_id**: Foreign key to products
-- **isPrimary**: Whether it's the primary category (NEW)
-- **displayOrder**: Display order within category (NEW)
+- **isPrimary**: Whether it's the primary category  
+- **displayOrder**: Display order within category  
 
 ### brands
 - **id**: Unique identifier
@@ -176,24 +176,24 @@
 - **url**: SEO-friendly URL slug
 - **imageName**: Brand logo
 - **description**: Brand description
-- **foundedYear**: Year founded (NEW)
-- **countryOfOrigin**: Country of origin (NEW)
-- **websiteUrl**: Brand website (NEW)
-- **isOfficial**: Whether it's an official partner (NEW)
-- **metaTitle**: SEO title (NEW)
-- **metaDescription**: SEO description (NEW)
+- **foundedYear**: Year founded  
+- **countryOfOrigin**: Country of origin  
+- **websiteUrl**: Brand website  
+- **isOfficial**: Whether it's an official partner  
+- **metaTitle**: SEO title  
+- **metaDescription**: SEO description  
 
 ### images
 - **id**: Unique identifier
 - **imageName**: Image file name
 - **type**: Image type
 - **parent_id**: ID of parent entity
-- **altText**: Alternative text (NEW)
-- **title**: Image title (NEW)
-- **displayOrder**: Display order (NEW)
-- **size**: File size (NEW)
-- **width**: Image width (NEW)
-- **height**: Image height (NEW)
+- **altText**: Alternative text  
+- **title**: Image title  
+- **displayOrder**: Display order  
+- **size**: File size  
+- **width**: Image width  
+- **height**: Image height  
 
 ### productReviews
 - **id**: Unique identifier
@@ -203,14 +203,14 @@
 - **negativePoints**: Negative aspects
 - **summary**: Review summary
 - **product_id**: Foreign key to products
-- **user_id**: Reviewer (Foreign key to Users) (NEW)
-- **rating**: Numerical rating (NEW)
-- **verified**: Whether reviewer purchased product (NEW)
-- **helpfulCount**: Number of users finding review helpful (NEW)
-- **reportCount**: Number of reports for inappropriate content (NEW)
-- **createdAt**: Review date (NEW)
-- **status**: Review status (pending/approved/rejected) (NEW)
-- **adminResponse**: Response from seller/admin (NEW)
+- **user_id**: Reviewer (Foreign key to Users)  
+- **rating**: Numerical rating  
+- **verified**: Whether reviewer purchased product  
+- **helpfulCount**: Number of users finding review helpful  
+- **reportCount**: Number of reports for inappropriate content  
+- **createdAt**: Review date  
+- **status**: Review status (pending/approved/rejected)  
+- **adminResponse**: Response from seller/admin  
 
 ### property
 - **id**: Unique identifier
@@ -220,31 +220,31 @@
 - **value**: Property value
 - **isKeyProp**: Whether it's a key property
 - **product_id**: Foreign key to products
-- **isFilterable**: Whether can be used in filters (NEW)
-- **isComparable**: Whether can be used in comparisons (NEW)
-- **displayOrder**: Display order (NEW)
-- **unit**: Measurement unit (NEW)
+- **isFilterable**: Whether can be used in filters  
+- **isComparable**: Whether can be used in comparisons  
+- **displayOrder**: Display order  
+- **unit**: Measurement unit  
 
-### ProductTags (NEW)
+### ProductTags  
 - **id**: Unique identifier
 - **name**: Tag name
 - **slug**: SEO-friendly URL slug
 - **description**: Tag description
 - **createdAt**: Creation date
 
-### ProductTagRelations (NEW)
+### ProductTagRelations  
 - **id**: Unique identifier
 - **product_id**: Foreign key to products
 - **tag_id**: Foreign key to ProductTags
 
-### RelatedProducts (NEW)
+### RelatedProducts  
 - **id**: Unique identifier
 - **product_id**: Foreign key to products
 - **related_product_id**: Foreign key to products
 - **relationType**: Relation type (similar, accessory, upsell, etc.)
 - **displayOrder**: Display order
 
-### ProductBundles (NEW)
+### ProductBundles  
 - **id**: Unique identifier
 - **name**: Bundle name
 - **description**: Bundle description
@@ -253,14 +253,14 @@
 - **endDate**: Availability end
 - **isActive**: Active status
 
-### ProductBundleItems (NEW)
+### ProductBundleItems  
 - **id**: Unique identifier
 - **bundle_id**: Foreign key to ProductBundles
 - **product_id**: Foreign key to products
 - **quantity**: Product quantity in bundle
 - **price**: Optional custom price
 
-### DigitalProductFiles (NEW)
+### DigitalProductFiles  
 - **id**: Unique identifier
 - **product_id**: Foreign key to products
 - **filename**: File name
@@ -276,11 +276,11 @@
 ### guarantees
 - **id**: Unique identifier
 - **title**: Guarantee title
-- **description**: Detailed description (NEW)
-- **durationMonths**: Duration in months (NEW)
-- **coverageType**: What's covered (NEW)
-- **provider**: Who provides the guarantee (NEW)
-- **terms**: Terms and conditions (NEW)
+- **description**: Detailed description  
+- **durationMonths**: Duration in months  
+- **coverageType**: What's covered  
+- **provider**: Who provides the guarantee  
+- **terms**: Terms and conditions  
 
 ### sellers
 - **id**: Unique identifier
@@ -298,14 +298,14 @@
 - **balance**: Account balance
 - **recieves**: Payments received
 - **deliveryTime**: Average delivery time
-- **storeDescription**: Business description (NEW)
-- **storeLogo**: Logo image (NEW)
-- **storeSlug**: SEO-friendly URL (NEW)
-- **taxId**: Tax identification (NEW)
-- **bankAccountInfo**: Payment details (NEW)
-- **verificationStatus**: Account verification status (NEW)
-- **commissionRate**: Platform commission percentage (NEW)
-- **sellerLevel**: Seller level/tier (NEW)
+- **storeDescription**: Business description  
+- **storeLogo**: Logo image  
+- **storeSlug**: SEO-friendly URL  
+- **taxId**: Tax identification  
+- **bankAccountInfo**: Payment details  
+- **verificationStatus**: Account verification status  
+- **commissionRate**: Platform commission percentage  
+- **sellerLevel**: Seller level/tier  
 
 ### sellersPrices
 - **id**: Unique identifier
@@ -323,12 +323,12 @@
 - **productOption_id**: Foreign key to productOption
 - **product_id**: Foreign key to products
 - **seller_id**: Foreign key to sellers
-- **costPrice**: Seller's cost (NEW)
-- **isDefault**: Whether default offer for product (NEW)
-- **leadTime**: Processing time before shipping (NEW)
-- **availabilityStatus**: In stock, backorder, etc. (NEW)
-- **minimumOrderQuantity**: Minimum order quantity (NEW)
-- **restockDate**: Expected restock date if out of stock (NEW)
+- **costPrice**: Seller's cost  
+- **isDefault**: Whether default offer for product  
+- **leadTime**: Processing time before shipping  
+- **availabilityStatus**: In stock, backorder, etc.  
+- **minimumOrderQuantity**: Minimum order quantity  
+- **restockDate**: Expected restock date if out of stock  
 
 ### productPrices
 - **id**: Unique identifier
@@ -339,23 +339,23 @@
 - **isAvailable**: Availability status
 - **sellerPrice_id**: Foreign key to sellersPrices
 - **productOptions_id**: Foreign key to productOptions
-- **specialOfferText**: Promotional text (NEW)
-- **startDate**: Promotional price start date (NEW)
-- **endDate**: Promotional price end date (NEW)
-- **isDefaultPrice**: Whether this is default price (NEW)
+- **specialOfferText**: Promotional text  
+- **startDate**: Promotional price start date  
+- **endDate**: Promotional price end date  
+- **isDefaultPrice**: Whether this is default price  
 
 ### productOptions
 - **id**: Unique identifier
 - **type**: Option type
 - **name**: Option name
 - **value**: Option value
-- **displayOrder**: Display order (NEW)
-- **priceModifier**: Price adjustment amount (NEW)
-- **priceModifierType**: Fixed or percentage (NEW)
-- **sku**: SKU extension for this option (NEW)
-- **image**: Option image (like color swatch) (NEW)
+- **displayOrder**: Display order  
+- **priceModifier**: Price adjustment amount  
+- **priceModifierType**: Fixed or percentage  
+- **sku**: SKU extension for this option  
+- **image**: Option image (like color swatch)  
 
-### InventoryHistory (NEW)
+### InventoryHistory  
 - **id**: Unique identifier
 - **seller_id**: Foreign key to sellers
 - **product_id**: Foreign key to products
@@ -367,7 +367,7 @@
 - **changedBy**: User who made the change
 - **notes**: Additional notes
 
-### TierPricing (NEW)
+### TierPricing  
 - **id**: Unique identifier
 - **sellerPrice_id**: Foreign key to sellersPrices
 - **minimumQuantity**: Minimum quantity for tier
@@ -386,12 +386,12 @@
 - **isConfirmed**: Moderation status
 - **product_id**: Foreign key to products
 - **user_id**: Foreign key to Users
-- **rating**: Star rating (NEW)
-- **commentDate**: Date posted (NEW)
-- **helpfulCount**: Number of helpful votes (NEW)
-- **reportCount**: Number of inappropriate reports (NEW)
-- **purchaseVerified**: Whether from verified purchaser (NEW)
-- **adminResponse**: Response from seller/admin (NEW)
+- **rating**: Star rating  
+- **commentDate**: Date posted  
+- **helpfulCount**: Number of helpful votes  
+- **reportCount**: Number of inappropriate reports  
+- **purchaseVerified**: Whether from verified purchaser  
+- **adminResponse**: Response from seller/admin  
 
 ### questions
 - **id**: Unique identifier
@@ -401,10 +401,10 @@
 - **isConfirmed**: Moderation status
 - **user_id**: Foreign key to Users
 - **product_id**: Foreign key to products
-- **status**: Question status (NEW)
-- **isHelpful**: Whether marked as helpful (NEW)
-- **helpfulCount**: Number of helpful votes (NEW)
-- **viewCount**: Number of views (NEW)
+- **status**: Question status  
+- **isHelpful**: Whether marked as helpful  
+- **helpfulCount**: Number of helpful votes  
+- **viewCount**: Number of views  
 
 ### answers
 - **id**: Unique identifier
@@ -414,27 +414,27 @@
 - **isConfirmed**: Moderation status
 - **user_id**: Foreign key to Users
 - **question_id**: Foreign key to questions
-- **isBestAnswer**: Whether marked as best answer (NEW)
-- **isFromSeller**: Whether from product seller (NEW)
-- **isFromAdmin**: Whether from admin (NEW)
-- **helpfulCount**: Number of helpful votes (NEW)
-- **unhelpfulCount**: Number of unhelpful votes (NEW)
+- **isBestAnswer**: Whether marked as best answer  
+- **isFromSeller**: Whether from product seller  
+- **isFromAdmin**: Whether from admin  
+- **helpfulCount**: Number of helpful votes  
+- **unhelpfulCount**: Number of unhelpful votes  
 
 ### comment_user_like
 - **id**: Unique identifier
 - **isLiked**: Like status
 - **comment_id**: Foreign key to comments
 - **user_id**: Foreign key to Users
-- **timestamp**: When like was given (NEW)
+- **timestamp**: When like was given  
 
 ### answer_user_like
 - **id**: Unique identifier
 - **isLiked**: Like status
 - **answer_id**: Foreign key to answers
 - **user_id**: Foreign key to Users
-- **timestamp**: When like was given (NEW)
+- **timestamp**: When like was given  
 
-### ProductSubscriptions (NEW)
+### ProductSubscriptions  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **product_id**: Foreign key to products
@@ -442,7 +442,7 @@
 - **createdAt**: Subscription date
 - **isActive**: Active status
 
-### UserWishlists (NEW)
+### UserWishlists  
 - **id**: Unique identifier
 - **name**: Wishlist name
 - **description**: Wishlist description
@@ -450,7 +450,7 @@
 - **createdAt**: Creation date
 - **user_id**: Foreign key to Users
 
-### WishlistItems (NEW)
+### WishlistItems  
 - **id**: Unique identifier
 - **wishlist_id**: Foreign key to UserWishlists
 - **product_id**: Foreign key to products
@@ -458,14 +458,14 @@
 - **notes**: User notes
 - **priority**: User priority level
 
-### ProductComparisons (NEW)
+### ProductComparisons  
 - **id**: Unique identifier
 - **sessionId**: Browser session ID
 - **user_id**: Foreign key to Users (optional)
 - **createdAt**: Creation time
 - **updatedAt**: Last update time
 
-### ComparisonItems (NEW)
+### ComparisonItems  
 - **id**: Unique identifier
 - **comparison_id**: Foreign key to ProductComparisons
 - **product_id**: Foreign key to products
@@ -482,15 +482,15 @@
 - **campainName**: Campaign name
 - **category_id**: Foreign key to categories
 - **brand_id**: Foreign key to brands
-- **description**: Promotion details (NEW)
-- **discountType**: Percentage or fixed amount (NEW)
-- **discountValue**: Discount amount/percentage (NEW)
-- **couponCode**: Optional coupon code (NEW)
-- **usageLimit**: Maximum usage count (NEW)
-- **usageCount**: Current usage count (NEW)
-- **minimumOrderAmount**: Order threshold (NEW)
-- **isActive**: Active status (NEW)
-- **applyToShipping**: Whether applies to shipping (NEW)
+- **description**: Promotion details  
+- **discountType**: Percentage or fixed amount  
+- **discountValue**: Discount amount/percentage  
+- **couponCode**: Optional coupon code  
+- **usageLimit**: Maximum usage count  
+- **usageCount**: Current usage count  
+- **minimumOrderAmount**: Order threshold  
+- **isActive**: Active status  
+- **applyToShipping**: Whether applies to shipping  
 
 ### addToPromotions
 - **id**: Unique identifier
@@ -503,9 +503,9 @@
 - **endDate**: End date
 - **sellersprice_id**: Foreign key to sellersPrices
 - **promotion_id**: Foreign key to promotions
-- **listingPriority**: Display priority (NEW)
-- **promotionalText**: Marketing message (NEW)
-- **soldCount**: Number of units sold (NEW)
+- **listingPriority**: Display priority  
+- **promotionalText**: Marketing message  
+- **soldCount**: Number of units sold  
 
 ### discountCode
 - **id**: Unique identifier
@@ -517,14 +517,14 @@
 - **maxUse**: Maximum usage count
 - **firstOrder**: First order only flag
 - **product_id**: Foreign key to products
-- **code**: Actual coupon code (NEW)
-- **discountType**: Percentage or fixed (NEW)
-- **description**: Coupon description (NEW)
-- **isActive**: Active status (NEW)
-- **usageLimit**: Total usage limit (NEW)
-- **perUserLimit**: Usage limit per user (NEW)
-- **usedCount**: Times already used (NEW)
-- **categories**: Applicable categories (NEW)
+- **code**: Actual coupon code  
+- **discountType**: Percentage or fixed  
+- **description**: Coupon description  
+- **isActive**: Active status  
+- **usageLimit**: Total usage limit  
+- **perUserLimit**: Usage limit per user  
+- **usedCount**: Times already used  
+- **categories**: Applicable categories  
 
 ### banners
 - **id**: Unique identifier
@@ -533,16 +533,16 @@
 - **imageName**: Banner image
 - **url**: Click destination
 - **isActive**: Active status
-- **startDate**: Start date (NEW)
-- **endDate**: End date (NEW)
-- **position**: Display position (NEW)
-- **displayOrder**: Display order (NEW)
-- **impressions**: View count (NEW)
-- **clicks**: Click count (NEW)
-- **targetDevice**: Desktop/mobile/all (NEW)
-- **description**: Banner description (NEW)
+- **startDate**: Start date  
+- **endDate**: End date  
+- **position**: Display position  
+- **displayOrder**: Display order  
+- **impressions**: View count  
+- **clicks**: Click count  
+- **targetDevice**: Desktop/mobile/all  
+- **description**: Banner description  
 
-### LoyaltyProgram (NEW)
+### LoyaltyProgram  
 - **id**: Unique identifier
 - **name**: Program name
 - **description**: Program description
@@ -552,7 +552,7 @@
 - **expiryMonths**: Months until points expire
 - **isActive**: Program active status
 
-### LoyaltyHistory (NEW)
+### LoyaltyHistory  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **points**: Points earned/redeemed
@@ -563,7 +563,7 @@
 - **expiryDate**: When points expire
 - **balance**: Current balance after transaction
 
-### GiftCards (NEW)
+### GiftCards  
 - **id**: Unique identifier
 - **code**: Gift card code
 - **initialValue**: Starting value
@@ -579,7 +579,7 @@
 - **status**: Active/redeemed/expired
 - **isDigital**: Digital or physical card
 
-### ReferralProgram (NEW)
+### ReferralProgram  
 - **id**: Unique identifier
 - **name**: Program name
 - **description**: Program description
@@ -589,7 +589,7 @@
 - **isActive**: Program active status
 - **termsAndConditions**: Program terms
 
-### Referrals (NEW)
+### Referrals  
 - **id**: Unique identifier
 - **referrer_id**: Foreign key to Users (referrer)
 - **referred_id**: Foreign key to Users (new customer)
@@ -601,7 +601,7 @@
 - **referrerRewardId**: Referrer reward reference
 - **referredRewardId**: New customer reward reference
 
-### EmailCampaigns (NEW)
+### EmailCampaigns  
 - **id**: Unique identifier
 - **name**: Campaign name
 - **subject**: Email subject
@@ -614,7 +614,7 @@
 - **clickCount**: Click count
 - **createdBy**: Creator user ID
 
-### AbandonedCartRecovery (NEW)
+### AbandonedCartRecovery  
 - **id**: Unique identifier
 - **cart_id**: Foreign key to carts
 - **user_id**: Foreign key to Users
@@ -634,17 +634,17 @@
 - **user_id**: Foreign key to Users
 - **address_id**: Foreign key to Addresses
 - **sellersPrice_id**: Foreign key to sellersPrices
-- **createdAt**: Creation date (NEW)
-- **status**: Active/abandoned/converted (NEW)
-- **couponCode**: Applied coupon (NEW)
-- **ip**: User IP address (NEW)
-- **userAgent**: Browser info (NEW)
-- **currency**: Currency code (NEW)
-- **subtotal**: Items subtotal (NEW)
-- **discountAmount**: Total discounts (NEW)
-- **taxAmount**: Total taxes (NEW)
-- **shippingAmount**: Shipping cost (NEW)
-- **grandTotal**: Final amount (NEW)
+- **createdAt**: Creation date  
+- **status**: Active/abandoned/converted  
+- **couponCode**: Applied coupon  
+- **ip**: User IP address  
+- **userAgent**: Browser info  
+- **currency**: Currency code  
+- **subtotal**: Items subtotal  
+- **discountAmount**: Total discounts  
+- **taxAmount**: Total taxes  
+- **shippingAmount**: Shipping cost  
+- **grandTotal**: Final amount  
 
 ### cartDetails
 - **id**: Unique identifier
@@ -652,23 +652,23 @@
 - **price**: Price at addition time
 - **cart_id**: Foreign key to carts
 - **sellersPrice_id**: Foreign key to sellersPrices
-- **addedAt**: Date added to cart (NEW)
-- **productOption_id**: Foreign key to productOptions (NEW)
-- **isGift**: Whether item is a gift (NEW)
-- **giftMessage**: Gift message (NEW)
-- **customizationData**: Custom options JSON (NEW)
+- **addedAt**: Date added to cart  
+- **productOption_id**: Foreign key to productOptions  
+- **isGift**: Whether item is a gift  
+- **giftMessage**: Gift message  
+- **customizationData**: Custom options JSON  
 
 ### favoriteLists
 - **id**: Unique identifier
 - **coockie**: Session cookie
 - **updateDate**: Last update
 - **user_id**: Foreign key to Users
-- **name**: List name (NEW)
-- **isPublic**: Privacy setting (NEW)
-- **shareUrl**: Shareable URL (NEW)
-- **description**: List description (NEW)
+- **name**: List name  
+- **isPublic**: Privacy setting  
+- **shareUrl**: Shareable URL  
+- **description**: List description  
 
-### FavoriteItems (NEW)
+### FavoriteItems  
 - **id**: Unique identifier
 - **favoriteList_id**: Foreign key to favoriteLists
 - **product_id**: Foreign key to products
@@ -687,22 +687,22 @@
 - **amountPayable**: Amount to pay
 - **paymentStatus**: Payment status
 - **user_id**: Foreign key to Users
-- **orderNumber**: Human-readable order number (NEW)
-- **orderDate**: Order creation date (NEW)
-- **orderStatus**: Order status (NEW)
-- **currency**: Currency code (NEW)
-- **subtotal**: Items subtotal (NEW)
-- **discountAmount**: Total discounts (NEW)
-- **taxAmount**: Total taxes (NEW)
-- **shippingAmount**: Shipping cost (NEW)
-- **couponCode**: Applied coupon code (NEW)
-- **notes**: Order notes (NEW)
-- **giftMessage**: Gift message (NEW)
-- **ipAddress**: Customer IP (NEW)
-- **userAgent**: Browser info (NEW)
-- **source**: Order source (web/app/marketplace) (NEW)
+- **orderNumber**: Human-readable order number  
+- **orderDate**: Order creation date  
+- **orderStatus**: Order status  
+- **currency**: Currency code  
+- **subtotal**: Items subtotal  
+- **discountAmount**: Total discounts  
+- **taxAmount**: Total taxes  
+- **shippingAmount**: Shipping cost  
+- **couponCode**: Applied coupon code  
+- **notes**: Order notes  
+- **giftMessage**: Gift message  
+- **ipAddress**: Customer IP  
+- **userAgent**: Browser info  
+- **source**: Order source (web/app/marketplace)  
 
-### OrderItems (NEW)
+### OrderItems  
 - **id**: Unique identifier
 - **order_id**: Foreign key to orders
 - **product_id**: Foreign key to products
@@ -717,7 +717,7 @@
 - **status**: Item status
 - **sku**: Product SKU
 
-### OrderStatusHistory (NEW)
+### OrderStatusHistory  
 - **id**: Unique identifier
 - **order_id**: Foreign key to orders
 - **status**: Status value
@@ -726,7 +726,7 @@
 - **createdBy**: User who changed status
 - **createdAt**: Status change timestamp
 
-### payments (NEW)
+### payments  
 - **id**: Unique identifier
 - **order_id**: Foreign key to orders
 - **amount**: Payment amount
@@ -750,23 +750,23 @@
 - **shipmentCost**: Shipping cost
 - **sumAmount**: Shipment total
 - **order_id**: Foreign key to orders
-- **trackingUrl**: Tracking URL (NEW)
-- **carrier**: Shipping carrier (NEW)
-- **expectedDeliveryDate**: Estimated delivery (NEW)
-- **actualDeliveryDate**: Actual delivery (NEW)
-- **signedBy**: Signature information (NEW)
-- **weight**: Package weight (NEW)
-- **dimensions**: Package dimensions (NEW)
-- **shippingNotes**: Special instructions (NEW)
+- **trackingUrl**: Tracking URL  
+- **carrier**: Shipping carrier  
+- **expectedDeliveryDate**: Estimated delivery  
+- **actualDeliveryDate**: Actual delivery  
+- **signedBy**: Signature information  
+- **weight**: Package weight  
+- **dimensions**: Package dimensions  
+- **shippingNotes**: Special instructions  
 
-### ShipmentItems (NEW)
+### ShipmentItems  
 - **id**: Unique identifier
 - **shipment_id**: Foreign key to shipments
 - **orderItem_id**: Foreign key to OrderItems
 - **quantity**: Quantity shipped
 - **tracking_number**: Individual tracking
 
-### Returns (NEW)
+### Returns  
 - **id**: Unique identifier
 - **order_id**: Foreign key to orders
 - **user_id**: Foreign key to Users
@@ -779,7 +779,7 @@
 - **notes**: Return notes
 - **returnLabel**: Return shipping label
 
-### ReturnItems (NEW)
+### ReturnItems  
 - **id**: Unique identifier
 - **return_id**: Foreign key to Returns
 - **orderItem_id**: Foreign key to OrderItems
@@ -788,7 +788,7 @@
 - **condition**: Returned item condition
 - **status**: Processing status
 
-### Invoices (NEW)
+### Invoices  
 - **id**: Unique identifier
 - **order_id**: Foreign key to orders
 - **invoiceNumber**: Invoice number
@@ -801,7 +801,7 @@
 
 ## Analytics & Additional Features
 
-### SearchLogs (NEW)
+### SearchLogs  
 - **id**: Unique identifier
 - **query**: Search term
 - **user_id**: Foreign key to Users (optional)
@@ -814,7 +814,7 @@
 - **resultClicked**: Whether a result was clicked
 - **clickedProductId**: Clicked product if any
 
-### ProductViews (NEW)
+### ProductViews  
 - **id**: Unique identifier
 - **product_id**: Foreign key to products
 - **user_id**: Foreign key to Users (optional)
@@ -826,7 +826,7 @@
 - **ip**: IP address
 - **userAgent**: Browser info
 
-### SalesStats (NEW)
+### SalesStats  
 - **id**: Unique identifier
 - **date**: Statistics date
 - **product_id**: Foreign key to products (optional)
@@ -840,7 +840,7 @@
 - **averageOrderValue**: Average order amount
 - **conversionRate**: Conversion percentage
 
-### CustomerSegments (NEW)
+### CustomerSegments  
 - **id**: Unique identifier
 - **name**: Segment name
 - **description**: Segment description
@@ -849,13 +849,13 @@
 - **updatedAt**: Last update
 - **memberCount**: Number of members
 
-### CustomerSegmentMembers (NEW)
+### CustomerSegmentMembers  
 - **id**: Unique identifier
 - **segment_id**: Foreign key to CustomerSegments
 - **user_id**: Foreign key to Users
 - **addedAt**: Date added to segment
 
-### ContentPages (NEW)
+### ContentPages  
 - **id**: Unique identifier
 - **title**: Page title
 - **slug**: SEO-friendly URL
@@ -868,7 +868,7 @@
 - **author_id**: Content creator
 - **pageType**: Type of page
 
-### BlogPosts (NEW)
+### BlogPosts  
 - **id**: Unique identifier
 - **title**: Post title
 - **slug**: SEO-friendly URL
@@ -884,19 +884,19 @@
 - **commentCount**: Number of comments
 - **tags**: Post tags (comma-separated)
 
-### BlogCategories (NEW)
+### BlogCategories  
 - **id**: Unique identifier
 - **name**: Category name
 - **slug**: SEO-friendly URL
 - **description**: Category description
 - **parent_id**: Parent category if any
 
-### BlogPostCategories (NEW)
+### BlogPostCategories  
 - **id**: Unique identifier
 - **post_id**: Foreign key to BlogPosts
 - **category_id**: Foreign key to BlogCategories
 
-### BlogComments (NEW)
+### BlogComments  
 - **id**: Unique identifier
 - **post_id**: Foreign key to BlogPosts
 - **user_id**: Foreign key to Users
@@ -905,7 +905,7 @@
 - **status**: Moderation status
 - **parentComment_id**: Parent comment if reply
 
-### SupportTickets (NEW)
+### SupportTickets  
 - **id**: Unique identifier
 - **user_id**: Foreign key to Users
 - **subject**: Ticket subject
@@ -918,7 +918,7 @@
 - **order_id**: Related order if applicable
 - **product_id**: Related product if applicable
 
-### TicketResponses (NEW)
+### TicketResponses  
 - **id**: Unique identifier
 - **ticket_id**: Foreign key to SupportTickets
 - **user_id**: Responder user ID
@@ -927,7 +927,7 @@
 - **createdAt**: Response time
 - **attachments**: Attachment paths (JSON)
 
-### TaxRules (NEW)
+### TaxRules  
 - **id**: Unique identifier
 - **countryCode**: Country code
 - **stateCode**: State/province code
@@ -938,7 +938,7 @@
 - **productType**: Product type it applies to
 - **isActive**: Active status
 
-### Currencies (NEW)
+### Currencies  
 - **id**: Unique identifier
 - **code**: Currency code
 - **name**: Currency name
@@ -949,7 +949,7 @@
 - **decimalPlaces**: Decimal places to show
 - **symbolPosition**: Symbol position (before/after)
 
-### Settings (NEW)
+### Settings  
 - **id**: Unique identifier
 - **section**: Settings section
 - **key**: Setting key
@@ -958,7 +958,7 @@
 - **isPublic**: Public visibility
 - **description**: Setting description
 
-### Translations (NEW)
+### Translations  
 - **id**: Unique identifier
 - **languageCode**: Language code
 - **translationKey**: Translation key
