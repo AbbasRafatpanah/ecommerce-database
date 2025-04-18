@@ -22,9 +22,6 @@
 
    ![E-commerce Database ER Diagram](diagrams/er_diagram_full.png)
 
-   ## Usage
-
-   See [Usage Guide](docs/ecommerce_schema_usage.md) for detailed instructions on how to implement and use this database schema.
 
    ## Scenarios
 
