@@ -27,6 +27,3 @@
 
    For detailed usage scenarios and examples, see [E-commerce Database Scenarios](docs/ecommerce-database-usage-scenarios.md).
 
-   ## License
-
-   MIT
